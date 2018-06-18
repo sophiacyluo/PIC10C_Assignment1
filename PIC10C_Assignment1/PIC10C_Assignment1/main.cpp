@@ -1,4 +1,6 @@
 #include <iostream>
+#include <fstream>
+#include <string>
 
 using namespace std;
 
@@ -16,6 +18,8 @@ int main()
         cout << "Start a new game (press 1)" << endl;
         cout << "View history (press 2)" << endl;
         cout << "Exit (press 3)" << endl;
+        cout << "--------------------------" << endl;
+        cout << "Please enter our answer here: ";
         
         int answer = 0;
         cin >> answer;
@@ -28,7 +32,6 @@ int main()
             more = false;
         else
         {
-            more = false;
             error_message();
         }
     }
@@ -38,12 +41,34 @@ int main()
 
 void game_start()
 {
+    cout << endl;
     cout << "The game has started." << endl;
+    
+    ofstream fout;
+    fout.open("gamelog.txt");
+    
+    fout << "Blah blah blah";
+    
+    fout.close();
 }
 
 void print_log()
 {
-    cout << "Print log" << endl;
+    cout << endl;
+    cout << "----------History----------" << endl;
+    
+    ifstream fin;
+    fin.open("gamelog.txt");
+    
+    while(fin.is_open())
+    {
+        cout << fin.rdbuf();
+        fin.close();
+    }
+    
+    cout << endl;
+    cout << "--------------------------" << endl;
+    cout << endl;
 }
 
 void error_message()
@@ -52,7 +77,7 @@ void error_message()
     
     while(more)
     {
-        cout << "There has been an error. Please make a valid choice" << endl;
+        cout << "There has been an error. Please make a valid choice: ";
         
         int answer = 0;
         cin >> answer;
@@ -68,6 +93,6 @@ void error_message()
             print_log();
         }
         else if(answer == 3)
-            more = false;
+            exit(0);
     }
 }
