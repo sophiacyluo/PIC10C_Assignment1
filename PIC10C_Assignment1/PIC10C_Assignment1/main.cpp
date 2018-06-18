@@ -19,7 +19,7 @@ int main()
         cout << "View history (press 2)" << endl;
         cout << "Exit (press 3)" << endl;
         cout << "--------------------------" << endl;
-        cout << "Please enter our answer here: ";
+        cout << "Please enter your answer here: ";
         
         int answer = 0;
         cin >> answer;
@@ -55,7 +55,7 @@ void game_start()
 void print_log()
 {
     cout << endl;
-    cout << "----------History----------" << endl;
+    cout << "---------History----------" << endl;
     
     ifstream fin;
     fin.open("gamelog.txt");
@@ -68,7 +68,29 @@ void print_log()
     
     cout << endl;
     cout << "--------------------------" << endl;
-    cout << endl;
+    
+    cout << "Return to menu (press 1)" << endl;
+    cout << "Exit (press 2)" << endl;
+    cout << "--------------------------" << endl;
+    cout << "Please enter your answer here: ";
+    
+    int answer = 0;
+    
+    do
+    {
+        cin >> answer;
+        
+        if(answer == 1)
+        {
+            cout << endl;
+            return;
+        }
+        if(answer == 2)
+            exit(0);
+        else
+            cout << "Not a valid answer. Please try again: ";
+    }
+    while(answer != 1 && answer != 2);
 }
 
 void error_message()
