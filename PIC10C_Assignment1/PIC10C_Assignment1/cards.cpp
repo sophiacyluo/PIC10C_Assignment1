@@ -191,37 +191,34 @@ Hand::Hand()
     total = 0;
 }
 
-void Hand::add_card()
+Hand::Hand(int new_total)
 {
-    hand.push_back(Card());
+    total = new_total;
 }
 
-void Hand::calculate()
+void Hand::add_card(Card new_Card)
+{
+    hand.push_back(new_Card);
+}
+
+double Hand::get_total()
 {
     for(int i = 0; i < hand.size(); ++i)
     {
-        int temp = hand[i].get_rank();
+        double temp = hand[i].get_rank();
         
         if(temp >= 1 && temp <= 7)
             total = total + temp;
         else if(temp >= 10 && temp <= 12)
             total = total + 0.5;
     }
-}
-
-double Hand::get_total() const
-{
+    
     return total;
 }
 
 /* *************************************************
  Player class
  ************************************************* */
-Player::Player()
-{
-    money = 100;
-}
-
 Player::Player(int m)
 {
     money = m;

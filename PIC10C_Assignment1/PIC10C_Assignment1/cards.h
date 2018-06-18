@@ -62,10 +62,10 @@ class Hand {
 public:
     // A vector of Cards
     Hand();
+    Hand(int new_total);
     
-    void add_card();
-    void calculate();
-    double get_total() const;
+    void add_card(Card new_Card);
+    double get_total();
     
 private:
     vector<Card> hand;
@@ -77,7 +77,6 @@ class Player {
 public:
     // Constructor.
     //    Assigns initial amount of money
-    Player();
     Player(int m);
     
     int get_fund() const;
@@ -85,7 +84,6 @@ public:
     
 private:
     int money;
-    // You decide what extra fields (if any) you'll need...
 };
 
 #endif
