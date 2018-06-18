@@ -63,10 +63,13 @@ public:
     // A vector of Cards
     Hand();
     
-    // You decide what functions you'll need...
+    void add_card();
+    void calculate();
+    double get_total() const;
     
 private:
-    // You decide what fields you'll need...
+    vector<Card> hand;
+    double total;
 };
 
 

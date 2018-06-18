@@ -186,8 +186,33 @@ bool Card::operator < (Card card2) const {
 /* *************************************************
  Hand class
  ************************************************* */
+Hand::Hand()
+{
+    total = 0;
+}
 
+void Hand::add_card()
+{
+    hand.push_back(Card());
+}
 
+void Hand::calculate()
+{
+    for(int i = 0; i < hand.size(); ++i)
+    {
+        int temp = hand[i].get_rank();
+        
+        if(temp >= 1 && temp <= 7)
+            total = total + temp;
+        else if(temp >= 10 && temp <= 12)
+            total = total + 0.5;
+    }
+}
+
+double Hand::get_total() const
+{
+    return total;
+}
 
 /* *************************************************
  Player class
@@ -207,7 +232,7 @@ int Player::get_fund() const
     return money;
 }
 
-void set_fund(int new_fund)
+void Player::set_fund(int new_fund)
 {
     money = new_fund;
 }
