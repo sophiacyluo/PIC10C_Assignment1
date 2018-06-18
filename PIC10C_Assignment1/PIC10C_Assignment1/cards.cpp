@@ -186,11 +186,28 @@ bool Card::operator < (Card card2) const {
 /* *************************************************
  Hand class
  ************************************************* */
-// Implemente the member functions of the Hand class here.
 
 
 
 /* *************************************************
  Player class
  ************************************************* */
-// Implemente the member functions of the Player class here.
+Player::Player()
+{
+    money = 100;
+}
+
+Player::Player(int m)
+{
+    money = m;
+}
+
+int Player::get_fund() const
+{
+    return money;
+}
+
+void set_fund(int new_fund)
+{
+    money = new_fund;
+}

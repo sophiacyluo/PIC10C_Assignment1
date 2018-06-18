@@ -74,9 +74,11 @@ class Player {
 public:
     // Constructor.
     //    Assigns initial amount of money
+    Player();
     Player(int m);
     
-    // You decide what functions you'll need...
+    int get_fund() const;
+    void set_fund(int new_fund);
     
 private:
     int money;
