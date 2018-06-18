@@ -1,4 +1,6 @@
 #include <iostream>
+#include <fstream>
+#include <string>
 
 using namespace std;
 
@@ -16,6 +18,8 @@ int main()
         cout << "Start a new game (press 1)" << endl;
         cout << "View history (press 2)" << endl;
         cout << "Exit (press 3)" << endl;
+        cout << "--------------------------" << endl;
+        cout << "Please enter our answer here: ";
         
         int answer = 0;
         cin >> answer;
@@ -38,12 +42,33 @@ int main()
 
 void game_start()
 {
+    cout << endl;
     cout << "The game has started." << endl;
+    
+    ofstream fout;
+    fout.open("gamelog.txt");
+    
+    fout << "Blah blah blah";
+    
+    fout.close();
 }
 
 void print_log()
 {
-    cout << "Print log" << endl;
+    cout << endl;
+    cout << "----------History----------" << endl;
+    
+    ifstream fin;
+    fin.open("gamelog.txt");
+    
+    while(fin)
+    {
+        cout << fin.rdbuf();
+    }
+    
+    cout << "--------------------------" << endl;
+    
+    fin.close();
 }
 
 void error_message()
