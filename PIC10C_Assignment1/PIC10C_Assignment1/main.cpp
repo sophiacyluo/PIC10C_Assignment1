@@ -32,7 +32,6 @@ int main()
             more = false;
         else
         {
-            more = false;
             error_message();
         }
     }
@@ -61,14 +60,15 @@ void print_log()
     ifstream fin;
     fin.open("gamelog.txt");
     
-    while(fin)
+    while(fin.is_open())
     {
         cout << fin.rdbuf();
+        fin.close();
     }
     
+    cout << endl;
     cout << "--------------------------" << endl;
-    
-    fin.close();
+    cout << endl;
 }
 
 void error_message()
@@ -77,7 +77,7 @@ void error_message()
     
     while(more)
     {
-        cout << "There has been an error. Please make a valid choice" << endl;
+        cout << "There has been an error. Please make a valid choice: ";
         
         int answer = 0;
         cin >> answer;
@@ -93,6 +93,6 @@ void error_message()
             print_log();
         }
         else if(answer == 3)
-            more = false;
+            exit(0);
     }
 }
