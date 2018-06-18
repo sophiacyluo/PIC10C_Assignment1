@@ -46,24 +46,6 @@ void game_start()
     ofstream fout;
     fout.open("gamelog.txt");
     
-    int fund = 100;
-    string s = "";
-    
-    s = "Staring fund: " + to_string(fund) + " pesos" + "\n";
-    
-    cout << s;
-    fout << s;
-    
-    cout << endl;
-    
-    while(true)
-    {
-        cout << "Draw a card? (y/n): ";
-        char answer;
-        cin >> answer;
-        
-    }
-    
     fout.close();
 }
 

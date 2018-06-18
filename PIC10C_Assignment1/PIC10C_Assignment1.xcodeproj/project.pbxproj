@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		807D804F20D7894100432FCD /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 807D804E20D7894100432FCD /* main.cpp */; };
+		807D805720D7AE3A00432FCD /* cards.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 807D805620D7AE3A00432FCD /* cards.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		807D804B20D7894100432FCD /* PIC10C_Assignment1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PIC10C_Assignment1; sourceTree = BUILT_PRODUCTS_DIR; };
 		807D804E20D7894100432FCD /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		807D805520D7ADC600432FCD /* cards.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cards.h; sourceTree = "<group>"; };
+		807D805620D7AE3A00432FCD /* cards.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = cards.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				807D804E20D7894100432FCD /* main.cpp */,
+				807D805520D7ADC600432FCD /* cards.h */,
+				807D805620D7AE3A00432FCD /* cards.cpp */,
 			);
 			path = PIC10C_Assignment1;
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				807D804F20D7894100432FCD /* main.cpp in Sources */,
+				807D805720D7AE3A00432FCD /* cards.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
