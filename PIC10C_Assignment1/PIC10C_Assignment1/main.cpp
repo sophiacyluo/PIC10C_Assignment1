@@ -54,6 +54,16 @@ void game_start()
     cout << s;
     fout << s;
     
+    cout << endl;
+    
+    while(true)
+    {
+        cout << "Draw a card? (y/n): ";
+        char answer;
+        cin >> answer;
+        
+    }
+    
     fout.close();
 }
 
