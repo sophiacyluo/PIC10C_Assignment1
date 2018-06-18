@@ -42,12 +42,17 @@ int main()
 void game_start()
 {
     cout << endl;
-    cout << "The game has started." << endl;
     
     ofstream fout;
     fout.open("gamelog.txt");
     
-    fout << "Blah blah blah";
+    int fund = 100;
+    string s = "";
+    
+    s = "Staring fund: " + to_string(fund) + " pesos" + "\n";
+    
+    cout << s;
+    fout << s;
     
     fout.close();
 }
